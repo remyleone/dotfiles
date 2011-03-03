@@ -21,12 +21,13 @@ bash:
 	cp shell/bashrc ~/.bashrc
 
 zsh:
+	mkdir -p ~/.zsh
 	cp shell/zsh/zshrc            ~/.zshrc
 	cp shell/zsh/appearance.zsh   ~/.zsh/appearance.zsh
 	cp shell/zsh/prompt.zsh       ~/.zsh/prompt.zsh
-	cp shell/zsh/history          ~/.zsh/history.zsh
+	cp shell/zsh/history.zsh      ~/.zsh/history.zsh
 	cp shell/zsh/git.zsh          ~/.zsh/git.zsh
-	cp shell/zsh/completion.sh    ~/.zsh/completion.sh
+	cp shell/zsh/completion.zsh   ~/.zsh/completion.zsh
 	cp shell/zsh/key-bindings.zsh ~/.zsh/key-bindings.zsh
 	cp shell/zsh/misc.zsh         ~/.zsh/misc.zsh
 
