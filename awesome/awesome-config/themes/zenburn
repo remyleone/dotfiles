@@ -1,0 +1,81 @@
+---------------------------
+    -- awesome zenburn theme --
+    -- anrxc_at_sysphere_org --
+    ---------------------------
+    
+    # Font styles for statusbars and titlebars
+#font          = Profont 8
+    font          = terminus 8
+    fg_normal     = #DCDCCC
+    fg_focus      = #F0DFAF
+    fg_urgent     = #CC9393
+    bg_normal     = #3F3F3F
+    bg_focus      = #1E2320
+    bg_urgent     = #3F3F3F
+    
+    # Windows border styles
+    border_width  = 1
+    border_normal = #3F3F3F
+    border_focus  = #1E2320
+    border_marked = #CC9393
+    
+    # Widget styles
+    fg_widget        = #AECF96
+    fg_center_widget = #88A175
+    fg_end_widget    = #FF5656
+    fg_off_widget    = #494B4F
+    fg_netup_widget  = #7F9F7F
+    fg_netdn_widget  = #CC9393
+    bg_widget        = #3F3F3F
+    border_widget    = #3F3F3F
+    
+-------------------
+--- Generic stuff from plain
+------------------
+# Display the taglist squares
+#taglist_squares_sel = /usr/share/awesome/themes/default/taglist/squarefw.png
+#taglist_squares_unsel = /usr/share/awesome/themes/default/taglist/squarew.png
+taglist_squares_sel = /home/nesta/.config/awesome/icons/taglist/squaref.png
+taglist_squares_unsel = /home/nesta/.config/awesome/icons/taglist/square.png
+
+tasklist_floating_icon = /usr/share/awesome/themes/default/tasklist/floatingw.png
+
+# Variables set for theming menu
+# menu_[bg|fg]_[normal|focus]
+# menu_[border_color|border_width]
+menu_submenu_icon = /usr/share/awesome/themes/default/submenu.png
+menu_height   = 15
+menu_width    = 100
+
+#wallpaper_cmd = awsetbg /home/nesta/Images/Wallpapers/dolph.jpg
+#wallpaper_cmd = awsetbg -c /home/nesta/Images/Wallpapers/fractal_dual_monitor.jpg
+wallpaper_cmd = awsetbg -c /home/nesta/Images/Wallpapers/space_blocks.jpg
+
+titlebar_close_button_normal = /usr/share/awesome/themes/default/titlebar/close.png
+titlebar_close_button_focus = /usr/share/awesome/themes/default/titlebar/closer.png
+
+# You can use your own command to set your wallpaper
+#wallpaper_cmd = awsetbg /usr/share/awesome/themes/default/background.png
+
+# You can use your own layout icons like this:
+layout_dwindle = /usr/share/awesome/themes/default/layouts/dwindlew.png
+layout_fairh = /home/nesta/.config/awesome/icons/layouts/fairh.png
+layout_fairv = /home/nesta/.config/awesome/icons/layouts/fairv.png
+layout_floating = /home/nesta/.config/awesome/icons/layouts/floating.png
+layout_magnifier = /home/nesta/.config/awesome/icons/layouts/magnifier.png
+layout_max = /home/nesta/.config/awesome/icons/layouts/max.png
+layout_spiral = /home/nesta/.config/awesome/icons/layouts/spiral.png
+layout_tilebottom = /home/nesta/.config/awesome/icons/layouts/tilebottom.png
+layout_tileleft = /home/nesta/.config/awesome/icons/layouts/tileleft.png
+layout_tile = /home/nesta/.config/awesome/icons/layouts/tile.png
+layout_tiletop = /home/nesta/.config/awesome/icons/layouts/tiletop.png
+
+#awesome_icon = /usr/share/awesome/icons/awesome16.png
+awesome_icon = /home/nesta/.config/awesome/icons/awesome14.png
+
+# Widget icons
+widget_vol = /home/nesta/.config/awesome/icons/vol.png
+widget_cpu = /home/nesta/.config/awesome/icons/cpu.png
+widget_mem = /home/nesta/.config/awesome/icons/mem.png
+widget_net_down = /home/nesta/.config/awesome/icons/net_down.png
+widget_net_up = /home/nesta/.config/awesome/icons/net_up.png

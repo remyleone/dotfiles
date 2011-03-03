@@ -1,0 +1,56 @@
+---------------------------------                                                                                            
+-- dark                                                                                          
+---------------------------------                                                                                            
+#font          = Terminus 8 
+#font          = Profont 10 
+font          = Dejavu Sans mono 8 
+
+bg_normal               = #222C2E
+bg_focus                = #545F65
+bg_urgent               = #B1BBBD
+ 
+fg_normal               = #9EA6AB
+fg_focus                = #222C2E
+fg_urgent               = #222C2E
+ 
+border_width            = 1
+border_normal           = #2C373B
+border_focus            = #B1BBBD
+border_marked           = #FF000066
+
+# Display the taglist squares
+taglist_squares_sel = /home/nesta/.config/awesome/icons/taglist/squaref.png
+taglist_squares_unsel = /home/nesta/.config/awesome/icons/taglist/square.png
+tasklist_floating_icon = /usr/share/awesome/themes/default/tasklist/floatingw.png
+
+# Variables set for theming menu
+menu_submenu_icon = /usr/share/awesome/themes/default/submenu.png
+menu_height   = 15
+menu_width    = 100
+
+wallpaper_cmd = awsetbg -c /home/nesta/Images/Wallpapers/aerostream_black_900w.jpg
+
+titlebar_close_button_normal = /usr/share/awesome/themes/default/titlebar/close.png
+titlebar_close_button_focus = /usr/share/awesome/themes/default/titlebar/closer.png
+
+# You can use your own layout icons like this:
+layout_dwindle = /usr/share/awesome/themes/default/layouts/dwindlew.png
+layout_fairh = /home/nesta/.config/awesome/icons/layouts/fairh.png
+layout_fairv = /home/nesta/.config/awesome/icons/layouts/fairv.png
+layout_floating = /home/nesta/.config/awesome/icons/layouts/floating.png
+layout_magnifier = /home/nesta/.config/awesome/icons/layouts/magnifier.png
+layout_max = /home/nesta/.config/awesome/icons/layouts/max.png
+layout_spiral = /home/nesta/.config/awesome/icons/layouts/spiral.png
+layout_tilebottom = /home/nesta/.config/awesome/icons/layouts/tilebottom.png
+layout_tileleft = /home/nesta/.config/awesome/icons/layouts/tileleft.png
+layout_tile = /home/nesta/.config/awesome/icons/layouts/tile.png
+layout_tiletop = /home/nesta/.config/awesome/icons/layouts/tiletop.png
+
+awesome_icon = /home/nesta/.config/awesome/icons/awesome14.png
+
+# Widget icons
+widget_vol = /home/nesta/.config/awesome/icons/vol.png
+widget_cpu = /home/nesta/.config/awesome/icons/cpu.png
+widget_mem = /home/nesta/.config/awesome/icons/mem.png
+widget_net_down = /home/nesta/.config/awesome/icons/net_down.png
+widget_net_up = /home/nesta/.config/awesome/icons/net_up.png

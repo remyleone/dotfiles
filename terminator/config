@@ -1,0 +1,18 @@
+[global_config]
+[keybindings]
+  new_tab = <Control>t
+  new_window = <Control>n
+  full_screen = <Alt>Return
+[profiles]
+  [[default]]
+    use_system_font = False
+    font = Monospace 6
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

@@ -1,0 +1,48 @@
+#---------#
+# Include #
+#---------#
+
+source ~/.zsh/git.zsh
+source ~/.termsupport.sh
+source ~/.zsh/misc.zsh
+source ~/.zsh/key-bindings.zsh
+source ~/.zsh/history.zsh
+source ~/.zsh/completion.zsh
+source ~/.zsh/appearance.zsh
+source ~/.alias
+source ~/.export
+source ~/.function
+source ~/.path
+source ~/.zsh/prompt.zsh
+
+#---------#
+# Options #
+#---------#
+
+setopt notify # Report the status of background jobs
+setopt correctall # Corrige les arguments sur une ligne 
+setopt noclobber # Prevent from erasing an existing file
+setopt interactivecomments # Enable commenting while typing
+setopt cdablevars # If I cannot find the folder try to look on ~
+setopt extended_glob # ~ # ^ vont être transformés 
+
+#----------------------------#
+# Directory in the title bar #
+#----------------------------#
+
+chpwd() {
+  [[ -t 1 ]] || return
+  case $TERM in
+    sun-cmd) print -Pn "\e]l%n@%m:%~\e\\"
+      ;;
+    *xterm*|rxvt*|(dt|k|E)term|screen*) print -Pn "\e]2;%n@%m:%~\a"
+      ;;
+  esac
+}
+
+#----------------------#
+# Message de bienvenue #
+#----------------------#
+
+echo -e "${REDP}Welcome Sieben. You are logged on $HOST.${NC}"
+echo ""

@@ -1,0 +1,192 @@
+# Commandes à explorer 
+#
+# alias
+# away
+# bind
+# channel
+# clear
+# completion
+# connect
+# dcc
+# hilight/dehilight
+# info
+# invite
+# kill
+# knockout
+# lastlog
+# layout
+# list
+# load
+# log
+# lusers
+# me
+# mode
+# motd
+# msg
+# nick
+# notice
+# notify
+# oper
+# ping
+# query
+# quit
+# redraw
+# reload
+# scrollback
+# silence
+# squery
+# stats
+# time
+# topic
+# ts
+# unalias
+# unignore
+# unsilence
+# userhost
+# who
+# whois
+# window
+
+# Commande utile pour hl un channel entier :  /hilight -channel #foo  -mask *
+
+servers = (
+# Ici on paramètre pour un serveur irc donné, vous pouvez ajouter d'autres blocs du genre pour vous connecter à d'autres serveurs.
+        {
+        address = "irc.iiens.net"; #l'adresse réseau du serveur
+        chatnet = "IIEns"; #Le nom du chatnet irc
+        port = "7000";
+        use_ssl = "yes"; #On utilise une connexion securisée
+        ssl_cafile = "/home/users/2009/leone2009/.irssi/cacert_arise.crt"; # le certification CA d'arise
+        ssl_verify = "yes"; #ici, la vérification de validité du certificat. à mettre seulement si on a le ca.crt d'arise
+        autoconnect = "yes"; #Connexion automatique sur le serveur
+        },
+        {
+        address = "irc.freenode.net";
+        use_ssl = "yes";
+        ssl_cafile = "http://crt.gandi.net/GandiStandardSSLCA.crt";
+        ssl_verify = "yes";
+        autoconnect = "yes";
+        },
+        {
+        address = "irc.rezosup.org";
+        autoconnect = "yes";
+        },
+{
+    address = "irc.secours.iiens.net";
+    chatnet = "IIEns";
+    port = "7000";
+    ssl_cafile = "/etc/ssl/arise/cacert_arise.crt";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+}
+);
+
+aliases = {
+#pleins d'alias de base, à étudier
+    J = "join";
+#donc là, on va taper /J #chan et ça fera /join #chan
+    WJOIN = "join -window";
+    WQUERY = "query -window";
+    LEAVE = "part";
+    DESCRIBE = "action";
+    DATE = "time";
+    HOST = "userhost";
+    LAST = "lastlog";
+    SAY = "msg *";
+    WI = "whois";
+    WII = "whois $0 $0";
+    WW = "whowas";
+    W = "who";
+    N = "names";
+    M = "msg";
+    T = "topic";
+    C = "clear";
+    CL = "clear";
+    KB = "kickban";
+    KN = "knockout";
+    BANS = "ban";
+    B = "ban";
+    AWAY = "away";
+    UNIG = "unignore";
+    SB = "scrollback";
+    UMODE = "mode $N";
+    WC = "window close";
+    GOTO = "sb goto";
+    CHAT = "dcc chat";
+    RUN = "SCRIPT LOAD";
+    UPTIME = "eval exec - expr `date +%s` - \\$F | awk '{print \"Irssi uptime: \"int(\\\\\\$1/3600/24)\"d \"int(\\\\\\$1/3600%24)\"h \"int(\\\\\\$1/60%60)\"m \"int(\\\\\\$1%60)\"s\" }'";
+    CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
+    SBAR = "STATUSBAR";
+    INVITELIST = "mode $C +I";
+    Q = "QUERY";
+#Les persos
+    MDP = "msg nickserv identify zeitgeist";
+#pr s'authentifier après avoir register son nick en une commande
+    NS = "msg NickServ";
+};
+
+channels = (
+#Mets ici tous les chans que tu souhaites join au lancement
+        { name = "#arise"; chatnet = "IIEns"; autojoin = "yes"; },
+        { name = "#ensiie"; chatnet = "IIEns"; autojoin = "yes"; }
+        );
+
+settings = {
+    core = {
+#C'est ici que tu vas paramétrer le pseudo que tu auras à la connexion et les infos que verront ceux qui feront un /whois sur ton nick
+        override_coredump_limit = "no";
+        real_name = "Remy Leone";
+        user_name = "Sieben";
+        nick = "Sieben";
+    };
+    "fe-common/core" = {
+        bell_beeps = "yes";
+        beep_when_away = "yes";
+        beep_msg_level = "HILIGHT MSGS DCC DCCMSGS";
+        beep_when_window_active = "yes";
+        theme = "default";
+        activity_hide_level = "= \"parts nicks modes crap craps join mode quits quit left\"";
+    };
+    "irc/core" = { cmd_queue_speed = "2010ms"; };
+    "perl/core/scripts" = {
+        screen_away_active = "ON";
+        screen_away_window = "= 1";
+        screen_away_repeat = "5";
+        screen_away_message = "Away - Detached from my screen";
+    };
+    "fe-text" = { actlist_sort = "refnum"; };
+};
+hilights = (
+        { text = "Sieben "; nick = "yes"; word = "yes"; },
+        {
+        text = "*";
+        nick = "yes";
+        word = "yes";
+        mask = "yes";
+        channels = ( "#sieben" );
+        }
+        );
+#Pour que les gens qui écrivent ton pseudo ait leur nick d'une couleur différente, cela te permet de savoir quand on parle de toi, et sur quel chan on le fait
+keyboard = (
+#ici, tu paramètres les raccourcis claviers
+#pour connaitre le code clé, tu fais un 'cat' dans ton terminal et tu appuies sur une touche
+
+#Par exemple 'F1' donne chez moi '^[[11~' donc je bind '^[[11~' avec le nom 'F1' (tu peux appeler cette touche 'patate' si tu le veux)
+#Si jamais tu utilises différents clients, tu peux binder différents touches au même nom de raccourci
+        { key = "^[[11~"; id = "key"; data = "F1"; },
+# Un F1 qui correspond à l'utilisation d'un linux utf-8
+        { key = "^[[12~"; id = "key"; data = "F2"; },
+        { key = "^[[23~"; id = "key"; data = "sF1"; },
+# Ensuite, je lie les noms de touches à une action
+        { key = "F1"; id = "change_window"; data = "1"; },
+# Par exemple, faire F1 permet d'aller à la première fenêtre
+        { key = "F2"; id = "change_window"; data = "2"; },
+# Et il n'y a besoin de faire qu'un alias, les différents clavier étant gérés juste au-dessus
+        { key = "sF1"; id = "change_window"; data = "11"; }
+        );
+
+conversions = { };
+logs = { Sieben = { level = "ALL"; }; };
+ignores = ( );
+chatnets = { IIEns = { type = "IRC"; }; };
+completions = { "♥" = { value = "<3"; auto = "yes"; }; };

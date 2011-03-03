@@ -1,0 +1,19 @@
+[user]
+name = Rémy Léone 
+email = remy.leone@gmail.com
+
+[alias]
+co = checkout
+ci = commit
+st = status
+br = branch
+hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+type = cat-file -t
+dump = cat-file -p
+
+[color]
+branch = auto
+status = auto
+diff = auto
+ui = auto
+
