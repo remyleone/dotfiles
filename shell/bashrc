@@ -78,11 +78,11 @@ source '.alias'
 
 # Export 
 
-source '.export.sh'
+source '.export'
 
 # Functions 
 
-source '.function.sh'
+source '.function'
 
 # Path
 
