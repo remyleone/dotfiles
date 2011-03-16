@@ -1,3 +1,12 @@
+###########
+# Include #
+###########
+
+source ~/.alias
+source ~/.export
+source ~/.function
+source ~/.path
+
 ############
 # Settings #
 ############
@@ -73,11 +82,6 @@ echo -e "${REDP}Welcome Sieben. You are logged on $HOSTNAME.${NC}"
 echo ""
 
 # Aliases (variables)
-
-source ~/.alias
-source ~/.export
-source ~/.function
-source ~/.path
 
 # Completion en mode sudo
 
