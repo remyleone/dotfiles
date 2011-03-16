@@ -9,7 +9,7 @@ vim_clean:
 
 ssh:
 	mkdir -p ~/.ssh/
-	cp -r ssh ~/.ssh/
+	cp -r ssh/* ~/.ssh/
 
 ssh_clean:
 	rm -fr ~/.ssh/
