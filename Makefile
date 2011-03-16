@@ -1,4 +1,4 @@
-all: vim music bash shell ssh zsh bash irc git screen Xdefaults
+all: avatar vim music bash shell ssh zsh bash irc git screen Xdefaults
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -10,6 +10,9 @@ ssh:
 music:
 	mkdir ~/.mpd
 	cp music/mpdconf .mpd/mpdconf
+
+avatar:
+	cp avatar/face.jpg ~/.face
 
 shell:
 	cp shell/alias.sh ~/.alias
