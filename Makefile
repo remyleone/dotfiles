@@ -19,7 +19,7 @@ shell:
 	cp shell/export.sh ~/.export
 	cp shell/function.sh ~/.function
 	cp shell/path.sh ~/.path
-	cp shell/termsupport.sh ~/.termsupport.sh
+	cp shell/termsupport.sh ~/.termsupport
 
 irc:
 	cp -r irc/irssi/ ~/.irssi

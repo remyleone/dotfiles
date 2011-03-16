@@ -3,7 +3,7 @@
 #---------#
 
 source ~/.zsh/git.zsh
-source ~/.termsupport.sh
+source ~/.termsupport
 source ~/.zsh/misc.zsh
 source ~/.zsh/key-bindings.zsh
 source ~/.zsh/history.zsh
