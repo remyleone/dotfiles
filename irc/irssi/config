@@ -120,7 +120,6 @@ aliases = {
     INVITELIST = "mode $C +I";
     Q = "QUERY";
 #Les persos
-    MDP = "msg nickserv identify zeitgeist";
 #pr s'authentifier après avoir register son nick en une commande
     NS = "msg NickServ";
 };
