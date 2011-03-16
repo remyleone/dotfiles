@@ -74,10 +74,10 @@ echo ""
 
 # Aliases (variables)
 
-source .alias
-source .export
-source .function
-source .path
+source ~/.alias
+source ~/.export
+source ~/.function
+source ~/.path
 
 # Completion en mode sudo
 
