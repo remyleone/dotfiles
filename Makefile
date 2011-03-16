@@ -5,11 +5,12 @@ vim:
 	cp -r vim ~/.vim/
 
 ssh:
-	cp ssh ~/.ssh
+	mkdir -p ~/.ssh/
+	cp -r ssh ~/.ssh/
 
 music:
-	mkdir ~/.mpd
-	cp music/mpdconf .mpd/mpdconf
+	mkdir -p ~/.mpd
+	cp music/mpdconf ~/.mpd/mpdconf
 
 avatar:
 	cp avatar/face.jpg ~/.face
@@ -25,7 +26,7 @@ irc:
 	cp -r irc/irssi/ ~/.irssi
 
 bash:
-	cp shell/bashrc ~/.bashrc
+	cp shell/bashrc.bash ~/.bashrc
 
 zsh:
 	mkdir -p ~/.zsh
