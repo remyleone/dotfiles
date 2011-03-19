@@ -54,6 +54,11 @@ alias netstat='netstat -r'
 alias tsort='tsort'
 alias memory='sudo lshw -short -C memory'
 
+# Decodage d'html
+
+alias htmlencode="perl -MHTML::Entities -pe 'encode_entities(\$_)'"
+alias htmldecode="perl -MHTML::Entities -pe 'decode_entities(\$_)'"
+
 # Section du manuel intéressantes
 
 # man hier : Contient une description de l'organisation de l'arborescence Unix
