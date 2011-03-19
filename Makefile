@@ -32,10 +32,9 @@ shell:
 	cp shell/export.sh ~/.export
 	cp shell/function.sh ~/.function
 	cp shell/path.sh ~/.path
-	cp shell/termsupport.sh ~/.termsupport
 
 shell_clean:
-	rm ~/.alias ~/.export ~/.function ~/.path ~/.termsupport
+	rm ~/.alias ~/.export ~/.function ~/.path
 
 irc:
 	cp -r irc/irssi/ ~/.irssi
