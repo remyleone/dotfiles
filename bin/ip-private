@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# ----------------------------------------------------------------------
+# Description
+#   Display the private IP.
+# ----------------------------------------------------------------------
+
+ifconfig eth0 | grep "inet adr" | awk '{print $2}' | awk -F ':' '{print $2}'
+ifconfig wlan0 | grep "inet adr" | awk '{print $2}' | awk -F ':' '{print $2}'
