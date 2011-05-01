@@ -1,0 +1,119 @@
+# Section du manuel intéressantes
+
+# man hier : Contient une description de l'organisation de l'arborescence Unix
+# man squid : Pour monter un proxy
+# man bashdb : Debugger pour bash
+# man logger : syslog
+# man mail : mail tools
+# man xargs : Ligne de commandes
+# man 7 signal : Liste des signaux
+# man rename : Perl tool for rename
+# man pr : Mettre en forme pour l'impression
+# $> !! : Commande précédente
+# man regex : POSIX regular expression 
+# man tr : Eliminer ou convertir des lettres d'un texte
+# man fmt : Formatter un texte 
+# man wodim : Graveur en ligne de commande 
+# man mktemp : Fichier temporaire (Stocker des mots de passe sensibles)
+# man setuid : Id des processus 
+# man builtins : Fonction de base de bash
+# man nohup : Mettre un process comme indépendant du terminal
+# man getopt(s) : Prendre les arguments de la ligne de commande 
+# man find : Trouver des fichiers
+# man locate : Trouver des fichiers
+# man join : Joindre des fichiers triés
+# man jobs : Liste des jobs en cours (A voir de plus près)
+# man iconv : Convertir l'encodage d'un fichier
+# man hostname : Nom de l'hôte
+# man fuser : Processus utilisant un fichier
+# man fgrep : grep -F
+# man egrep : grep -E
+# man dd : Copie generique
+# man crontab : Tache planifiée
+# man bg/fg : Mettre en fond un processus (lien avec jobs)
+# man basename : Nom du fichier sans l'extension
+# man arch : Affiche l'architecture de la machine
+# man uptime : Uptime
+# man uniq : Ote les lignes dupliquées
+# man uname : Informations systèmes
+# man mkfifo : Tube nommés
+# man mknod : Fichiers spéciaux
+# man nice : Courtoisie d'un processus 
+# man patch : Modification de fichiers existants
+# man rev : Inverser les lignes d'un fichier
+# man sort : Trier les lignes d'un fichier texte
+# man split : Decouper un fichier en plusieurs lignes
+# man stty : Configuration du terminal
+# man ipcs : Utilisation des ressources IPC System V
+# man ldconfig : Valider les bibliothèques dynamiques
+# man dmesg : Message du kernel
+# man init : Niveau d'execution (init 0 -> shutdown)
+# man ps : Processus
+# man renice : Changer la courtoisie d'un processus
+# man killall : Envoyer un signal a tous les processus de meme nom
+# man ifconfig : Configuration du reseau
+# man route : Gestion de la table de routage
+# man socklist : Liste des sockets actives
+# man netstat : Statistiques reseau
+# man arp : Gestion de la table ARP du noyau
+# man traceroute : Itineraire d'un paquet
+# man objdump : Information sur un fichier objet
+# man tcpdump : Information sur le reseau
+# man nm : Lire les a.out
+# man w : Qui est connecté sur la machine 
+# man pstree : Arbre des processus
+# man route #permet de voir les routes du système
+# man tcpdump 
+# man nslookup permet d'avoir des infos sur un site 
+# man xxd
+# man vmstat
+# man seq
+# man wc
+# man hexdump 
+# man source 
+# man netcat # permet de faire ce que l'on veut avec des paquets TCP et UDP
+# man tsort
+
+##############################################
+# Gestion des modules Kernel
+##############################################
+#
+# man lsmod : Liste des modules employés
+# man modinfo : Information sur un fichier module
+# man insmod : Insertion d'un module dans le noyau
+# man rmmod : Suppression d'un fichier dans le noyau
+# man depmod : Verification des dependances
+# man modprobe : Chargement gérant les dépendances
+# man sysctl : Paramètres du noyau (possible de les reconfigurer a chaud)
+
+
+# Tools
+
+#env: run a command (useful in scripts)
+#cut and paste and join: data manipulation
+#pr: format text
+#bc: calculator
+#nc: network debugging and data transfer
+#dd: moving data between files
+#file: identify type of a file
+#stat: file info
+#tac: print files in reverse
+#shuf: random selection of lines from a file
+#hd and bvi: dump or edit binary files
+#strings: extract text from binary files
+#tr: character translation or manipulation
+#iconv or uconv: conversion for text encodings
+#split and csplit: splitting files
+#ldd: dynamic library info
+#nm: symbols from object files
+#ab: benchrmarking web servers
+#strace: system call debugging
+#mtr: better traceroute for network debugging
+#cssh: visual concurrent shell
+#lsof: process file descriptor and socket info
+#dstat and htop: improved system stats monitors
+#last: login history
+#sar: historic system stats
+#iftop or nethogs: network utilization by socket or process
+#dmesg: boot and system error messages
+
