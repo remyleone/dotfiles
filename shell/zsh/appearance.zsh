@@ -1,3 +1,5 @@
+# APPEARANCE.zsh
+
 # ls colors
 autoload colors; colors;
 export LSCOLORS="Gxfxcxdxbxegedabagacad"

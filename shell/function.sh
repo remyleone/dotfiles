@@ -1,3 +1,5 @@
+# FUNCTION.sh
+
 function colors()
 {
     echo -e "\n${REDP}Code de couleurs:"
@@ -16,7 +18,7 @@ function colors()
 
 function infos() 
 {
-    echo -e "\nYou are logged on ${BLUEP}$HOSTNAME"
+    echo -e "\nYou are logged on ${GREENP}$HOST"
     echo -e "\n${REDP}Additionnal information:$NC " ; uname -a
     echo -e "\n${REDP}Users logged on:$NC " ; w -h
     echo -e "\n${REDP}Current date :$NC " ; date

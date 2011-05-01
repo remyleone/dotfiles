@@ -1,3 +1,5 @@
+# EXPORT.sh
+
 # Couleurs 
 
 # Définition des couleurs
@@ -21,17 +23,12 @@ YELLOW='\e[1;33m'
 WHITE='\e[1;37m'
 NC='\e[0m' # No Color
 
-
-# Export 
-
-export PATH="$PATH:~/bin"
-
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
 
-export MANPAGER=most
+export MANPAGER="less"
 export PAGER="less"
 export LESS_TERMCAP_mb=$'\E[01;31m'    # début de blink
 export LESS_TERMCAP_md=$'\E[01;31m'    # début de gras
@@ -40,5 +37,11 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # début de la ligne d`état
 export LESS_TERMCAP_se=$'\E[0m'        # fin
 export LESS_TERMCAP_us=$'\E[01;32m'    # début de souligné
 export LESS_TERMCAP_ue=$'\E[0m'        # fin
+
 export EDITOR="vim"
 export SVN_EDITOR="vim" 
+export GIT_EDITOR='vim'
+export IRC_CLIENT='irssi'
+
+export LANGUAGE='fr_FR.UTF-8'
+export LANG='fr_FR.UTF-8'

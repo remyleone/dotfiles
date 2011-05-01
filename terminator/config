@@ -6,7 +6,7 @@
 [profiles]
   [[default]]
     use_system_font = False
-    font = Monospace 6
+    font = Inconsolata 6
 [layouts]
   [[default]]
     [[[child1]]]

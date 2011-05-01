@@ -2,6 +2,17 @@
 name = Rémy Léone 
 email = remy.leone@gmail.com
 
+[github]
+user = sieben
+
+[status]
+color = auto
+
+[core]
+editor = vim
+pager = less
+excludesfile = ~/.gitignore
+
 [alias]
 co = checkout
 ci = commit
@@ -16,4 +27,9 @@ branch = auto
 status = auto
 diff = auto
 ui = auto
+diff = auto
+interactive = auto
+pager = true
 
+[pager]
+color = true

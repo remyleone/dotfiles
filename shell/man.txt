@@ -104,7 +104,7 @@
 #tr: character translation or manipulation
 #iconv or uconv: conversion for text encodings
 #split and csplit: splitting files
-#ldd: dynamic library info
+#ldd: dynamic library info -> Ce dont on a besoin pour lancer un executable
 #nm: symbols from object files
 #ab: benchrmarking web servers
 #strace: system call debugging

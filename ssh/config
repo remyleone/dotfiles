@@ -1,3 +1,8 @@
+Host *
+	KeepAlive yes
+	Compression no
+
+
 Host perso
 	HostName perso.iiens.net
 	User leone2009

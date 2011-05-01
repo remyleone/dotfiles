@@ -1,3 +1,5 @@
+# COMPLETION.zsh
+
 ## fixme - the load process here seems a bit bizarre
 
 unsetopt menu_complete   # do not autoselect the first completion entry
@@ -50,3 +52,13 @@ zstyle ":completion:*:processes" command "ps -au$USER"
 zstyle ":completion:*:*:kill:*:processes" list-colors "=(#b) #([0-9]#)*=0=01;32"
 #  #  * Complete with colors
 zstyle ":completion:*" list-colors ""
+
+# Don't complete uninteresting users.
+zstyle ':completion:*:*:*:users' ignored-patterns adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
+                                                  dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+                                                  hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+                                                  mailman mailnull mldonkey mysql nagios named netdump news \
+                                                  nfsnobody nobody nscd ntp nut nx openvpn operator pcap postfix \
+                                                  postgres privoxy pulse pvm quagga radvd rpc rpcuser rpm shutdown \
+                                                  squid sshd sync uucp vcsa xfs www-data avahi-autoipd
+

@@ -1,4 +1,4 @@
-#!/bin/zsh
+# theme.zsh
 
 setopt prompt_subst
 autoload colors; colors
