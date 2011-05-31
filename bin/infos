@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+function infos() 
+{
+    echo -e "\nYou are logged on ${GREENP}$HOST"
+    echo -e "\n${REDP}Additionnal information:$NC " ; uname -a
+    echo -e "\n${REDP}Users logged on:$NC " ; w -h
+    echo -e "\n${REDP}Current date :$NC " ; date
+    echo -e "\n${REDP}Machine stats :$NC " ; uptime
+    echo -e "\n${REDP}Memory stats :$NC " ; free
+}
+

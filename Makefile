@@ -31,7 +31,6 @@ build-shell:
 	rm -f shell/shell.sh
 	cat shell/alias.sh >> shell/shell.sh
 	cat shell/export.sh >> shell/shell.sh
-	cat shell/function.sh >> shell/shell.sh
 	cat shell/path.sh >> shell/shell.sh
 
 clean-shell:

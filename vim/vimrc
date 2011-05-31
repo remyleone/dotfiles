@@ -26,6 +26,7 @@ set showmode
 set showcmd " Faire apparaitre les commandes dans la dernière ligne
 set autoindent "Autoindentation 
 set smartindent
+set modeline " Permet de donner des indications d'indentation
 set smartcase
 set fileformat=unix
 set ruler "Info sur position
@@ -191,6 +192,11 @@ set wildignore+=*.o,*.r,*.class,*.pyc,*.so,*.sl,*.tar,*.tgz,*.gz,*.dmg,*.zip,*.p
 " Status bar format
 "set statusline=%<%f%m\ %r\ %h\ %w%=%l,%c\ %p%%
 set statusline=%f\ %(%m%r%h\ %)%([%Y]%)%=%<%-20{getcwd()}\ [b%n]\ %l/%L\ ~\ %p%%\ \
+
+" Taille a 80 char
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 
 " Always display the status bar

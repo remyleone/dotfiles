@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+function colors()
+{
+    echo -e "\n${REDP}Code de couleurs:"
+    echo -e "${BLUEF}BLUEF ${NC}<--> ${BLUEP}BLUEP"
+    echo -e "${GREENF}GREENF ${NC}<--> ${GREENP}GREENP"
+    echo -e "${CYANF}CYANF ${NC}<--> ${CYANP}CYANP"
+    echo -e "${REDF}REDF ${NC}<--> ${REDP}REDP"
+    echo -e "${PURPLEF}PURPLEF ${NC}<--> ${PURPLEP}PURPLEP"
+    echo -e "${BROWNF}BROWNF ${NC}<--> ${BROWNP}BROWNP"
+    echo -e "${GRAYF}GRAYF ${NC}<--> ${GRAYP}GRAYP"
+    echo -e "${YELLOW}YELLOW"
+    echo -e "${WHITE}WHITE"
+    echo -e "${NC}NC (NO COLOR)"
+    echo ""
+}
+
