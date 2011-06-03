@@ -37,11 +37,11 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # début de la ligne d`état
 export LESS_TERMCAP_se=$'\E[0m'        # fin
 export LESS_TERMCAP_us=$'\E[01;32m'    # début de souligné
 export LESS_TERMCAP_ue=$'\E[0m'        # fin
-
-export EDITOR="vim"
-export SVN_EDITOR="vim" 
+export PAGER='most'
+export EDITOR='vim'
+export SVN_EDITOR='vim'
 export GIT_EDITOR='vim'
 export IRC_CLIENT='irssi'
-
+export VISUAL='vim'
 export LANGUAGE='fr_FR.UTF-8'
 export LANG='fr_FR.UTF-8'

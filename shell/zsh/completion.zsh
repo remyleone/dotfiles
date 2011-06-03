@@ -8,7 +8,17 @@ setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
 
+setopt hash_list_all        # Whenever a command completion is attempted, make sure
+                            # the entire command path is hashed first.
+                            #
+
 WORDCHARS=''
+
+setopt auto_cd              # if a command is issued that can't be executed as a normal command,
+                            # and the command is the name of a directory,
+                            # perform the cd command to that directory
+                            #
+                            #
 
 autoload -Uz compinit
 compinit # -u si il y a des problèmes avec les fichiers qui sont pas les miens
@@ -55,10 +65,10 @@ zstyle ":completion:*" list-colors ""
 
 # Don't complete uninteresting users.
 zstyle ':completion:*:*:*:users' ignored-patterns adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-                                                  dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-                                                  hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-                                                  mailman mailnull mldonkey mysql nagios named netdump news \
-                                                  nfsnobody nobody nscd ntp nut nx openvpn operator pcap postfix \
-                                                  postgres privoxy pulse pvm quagga radvd rpc rpcuser rpm shutdown \
-                                                  squid sshd sync uucp vcsa xfs www-data avahi-autoipd
+    dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+    hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+    mailman mailnull mldonkey mysql nagios named netdump news \
+    nfsnobody nobody nscd ntp nut nx openvpn operator pcap postfix \
+    postgres privoxy pulse pvm quagga radvd rpc rpcuser rpm shutdown \
+    squid sshd sync uucp vcsa xfs www-data avahi-autoipd
 

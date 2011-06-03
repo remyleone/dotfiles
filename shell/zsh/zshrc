@@ -1,146 +1,3 @@
-# ALIAS
-
-# Personal alias 
-
-alias pipo='cat /dev/urandom | hexdump -C | egrep "ca fe"'
-alias arise_proxy='export HTTP_PROXY="http://http-proxy.iiens.net:3128"'
-alias standard_proxy='export HTTP_PROXY=""'
-
-# General alias 
-
-alias l='ls -alh --color=auto'
-alias rtfm='man'
-alias ll='ls -l'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias ls='ls -aF'
-alias df='df -hT'
-alias du='du -hc'
-
-# Commandes sympas 
-
-alias reading_test='hdparm -t -T /dev/sda' #Test de lecture
-alias dmidecode='sudo dmidecode' #Informations sur la carte mère
-alias free='free -m' # RAM
-alias cpuinfo='lscpu - cat /proc/cpuinfo' # Processeur
-alias vga='lspci | grep VGA'
-alias pci_list='lspci'
-alias usb_list='lsusb'
-alias network_list='ifconfig'
-alias space='df -h'
-alias swap='swapon -s'
-alias virtual_memory='vmstat'
-alias ifconfig='ifconfig -a'
-alias ss='ss -p'
-alias iso_mount='mount $1 /mnt/cdrom -oloop'
-alias entropy='cat /proc/sys/kernel/random/entropy_avail'
-alias entropy_speed='cat /dev/random | cpipe -ngr -vt > /dev/null'
-alias netstat='netstat -r'
-alias memory='sudo lshw -short -C memory'
-
-# Decodage d'html
-
-alias htmlencode="perl -MHTML::Entities -pe 'encode_entities(\$_)'"
-alias htmldecode="perl -MHTML::Entities -pe 'decode_entities(\$_)'"
-
-# Shortcut
-
-alias bat='acpitool -b'
-
-# Folding in vim
-# zo : Opening a fold
-# zO
-
-# {{{ Pacman
-alias pacsy="sudo pacman -Sy"               # Sync & Update
-alias pacup="sudo pacman -Syu"              # Sync, Update & Upgrade
-alias pacdg="sudo pacman -Syuu"             # Sync, Update & Downgrade
-alias paclu="pacman -Qu"                    # List upgradeable
-alias pacin="sudo pacman -S"                # Install a specific package
-alias pacnd="sudo pacman -Sd"               # Install a package but ignore deps
-alias pacrm="sudo pacman -Rns"              # Remove a specific package
-alias pacrd="sudo pacman -Rd"               # Remove a package but ignore deps
-alias pacss="pacman -Ss"                    # Search for a package
-alias pacsl="pacman -Qs"                    # Search for a package localy
-alias pacsi="pacman -Si"                    # Package info
-alias pacqi="pacman -Qi"                    # Package local info
-alias pacls="pacman -Ql"                    # List files in a package
-alias pacui="pacman -Qm"                    # List localy built packages
-alias pacfi="pacman -Qo"                    # Which package file belongs to
-alias paccl="sudo pacman -Scc"              # Fully clean the package cache
-alias pacdl="sudo pacman -Sw"               # Download a package without installing
-alias paclo="pacman -Qdt"                   # List package orphans
-alias paclog="pacman -Qc"                   # Package changelog
-# }}}
-
-# {{{ Slurpy
-alias aurup="slurpy -c -u -d"               # Sync, Update & Download
-alias aurlu="slurpy -c -u"                  # Update & List upgradeable
-alias aurss="slurpy -c -s"                  # Search for a package
-alias aursi="slurpy -c -i"                  # Package info
-alias aurgo="slurpy -c -g"                  # Visit AUR page
-alias aurdl="slurpy -c -d"                  # Download a package without installing
-# }}}
-
-# {{{ cook
-
-# }}}
-
-# {{{ urxvt
-
-# }}}
-
-# {{{ mplayer
-
-# }}}
-
-# {{{ wireshark
-
-# }}}
-
-# {{{ gcc
-alias gcc='gcc -Wall'
-# }}}
-
-# {{{ Virtualbox
-
-# }}}
-
-# {{{ irssi 
-
-# }}}
-
-# {{{ pdflatex
-
-# }}}
-
-# {{{ svn
-
-# }}}
-
-# {{{ git 
-
-# }}}
-
-# {{{ vim
-alias vi='vim'
-# }}}
-
-# {{{ autoconf 
-
-# }}}
-
-# {{{ autotools
-
-# }}}
-
-# {{{ automake
-
-# }}}
-
-# {{{ screen
-
-# }}}
 # EXPORT.sh
 
 # Couleurs 
@@ -171,7 +28,7 @@ export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
 
-export MANPAGER=most
+export MANPAGER="less"
 export PAGER="less"
 export LESS_TERMCAP_mb=$'\E[01;31m'    # début de blink
 export LESS_TERMCAP_md=$'\E[01;31m'    # début de gras
@@ -180,62 +37,134 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # début de la ligne d`état
 export LESS_TERMCAP_se=$'\E[0m'        # fin
 export LESS_TERMCAP_us=$'\E[01;32m'    # début de souligné
 export LESS_TERMCAP_ue=$'\E[0m'        # fin
-export EDITOR="vim"
-export SVN_EDITOR="vim" 
-# FUNCTION.sh
+export PAGER='most'
+export EDITOR='vim'
+export SVN_EDITOR='vim'
+export GIT_EDITOR='vim'
+export IRC_CLIENT='irssi'
+export VISUAL='vim'
+export LANGUAGE='fr_FR.UTF-8'
+export LANG='fr_FR.UTF-8'
+# ALIAS
 
-function colors()
-{
-    echo -e "\n${REDP}Code de couleurs:"
-    echo -e "${BLUEF}BLUEF ${NC}<--> ${BLUEP}BLUEP"
-    echo -e "${GREENF}GREENF ${NC}<--> ${GREENP}GREENP"
-    echo -e "${CYANF}CYANF ${NC}<--> ${CYANP}CYANP"
-    echo -e "${REDF}REDF ${NC}<--> ${REDP}REDP"
-    echo -e "${PURPLEF}PURPLEF ${NC}<--> ${PURPLEP}PURPLEP"
-    echo -e "${BROWNF}BROWNF ${NC}<--> ${BROWNP}BROWNP"
-    echo -e "${GRAYF}GRAYF ${NC}<--> ${GRAYP}GRAYP"
-    echo -e "${YELLOW}YELLOW"
-    echo -e "${WHITE}WHITE"
-    echo -e "${NC}NC (NO COLOR)"
-    echo ""
-}
+# Personal alias 
 
-function infos() 
-{
-    echo -e "\nYou are logged on ${GREENP}$HOST"
-    echo -e "\n${REDP}Additionnal information:$NC " ; uname -a
-    echo -e "\n${REDP}Users logged on:$NC " ; w -h
-    echo -e "\n${REDP}Current date :$NC " ; date
-    echo -e "\n${REDP}Machine stats :$NC " ; uptime
-    echo -e "\n${REDP}Memory stats :$NC " ; free
-}
+alias pipo='cat /dev/urandom | hexdump -C | egrep "ca fe"'
+alias arise_proxy='export HTTP_PROXY="http://http-proxy.iiens.net:3128"'
+alias standard_proxy='export HTTP_PROXY=""'
 
-function extract () {
-if [[ -f "$1" ]]; then
-    case "$1" in
-        *.tbz2 | *.tar.bz2) tar -xvjf  "$1"     ;;
-    *.txz | *.tar.xz)   tar -xvJf  "$1"     ;;
-*.tgz | *.tar.gz)   tar -xvzf  "$1"     ;;
-    *.tar | *.cbt)      tar -xvf   "$1"     ;;
-*.zip | *.cbz)      unzip      "$1"     ;;
-    *.rar | *.cbr)      unrar x    "$1"     ;;
-*.arj)              unarj x    "$1"     ;;
-    *.ace)              unace x    "$1"     ;;
-*.bz2)              bunzip2    "$1"     ;;
-    *.xz)               unxz       "$1"     ;;
-*.gz)               gunzip     "$1"     ;;
-    *.7z)               7z x       "$1"     ;;
-*.Z)                uncompress "$1"     ;;
-    *.gpg)       gpg2 -d "$1" | tar -xvzf - ;;
-*) echo 'Error: failed to extract "$1"' ;;
-    esac
-else
-    echo 'Error: "$1" is not a valid file for extraction'
-fi
-}
-# PATH.sh
+# General alias 
+
+alias l='ls -lh'
+alias rtfm='man'
+alias ll='ls -l'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias ls='ls -aF --color=auto'
+alias df='df -hT'
+alias du='du -hc'
+alias ..='cd ..'
+alias rd='rmdir'
+alias md='mkdir'
+
+# Commandes sympas 
+
+alias reading_test='hdparm -t -T /dev/sda' #Test de lecture
+alias dmidecode='sudo dmidecode' #Informations sur la carte mère
+alias free='free -m' # RAM
+alias cpuinfo='lscpu - cat /proc/cpuinfo' # Processeur
+alias vga='lspci | grep VGA'
+alias pci_list='lspci'
+alias usb_list='lsusb'
+alias network_list='ifconfig'
+alias space='df -h'
+alias swap='swapon -s'
+alias virtual_memory='vmstat'
+alias ifconfig='ifconfig -a'
+alias ss='ss -p'
+alias iso_mount='mount $1 /mnt/cdrom -oloop'
+alias entropy='cat /proc/sys/kernel/random/entropy_avail'
+alias entropy_speed='cat /dev/random | cpipe -ngr -vt > /dev/null'
+alias memory='sudo lshw -short -C memory'
+
+# Decodage d'html
+
+alias htmlencode="perl -MHTML::Entities -pe 'encode_entities(\$_)'"
+alias htmldecode="perl -MHTML::Entities -pe 'decode_entities(\$_)'"
+
+# rails
+alias sc='script/console'
+alias ss='script/server'
+alias sg='script/generate'
+alias a='autotest -rails'
+alias tlog='tail -f log/development.log'
+alias scaffold='script/generate nifty_scaffold'
+alias migrate='rake db:migrate db:test:clone'
+alias rst='touch tmp/restart.txt'
+
+# Shortcut
+
+alias bat='acpitool -b'
+
+# Folding in vim
+# zo : Opening a fold
+# zO
+
+alias gcc='gcc -Wall'
+alias vi='vim'
+alias apt='apt-get install'
+
+# chmod
+alias rw-='chmod 600'
+alias rwx='chmod 700'
+alias r--='chmod 644'
+alias r-x='chmod 755'
+
+
+# For Rails:
+alias sc='./script/console'
+alias sg='./script/generate'
+alias ss='./script/server'
+alias sd='./script/destroy'
+
+# For Rails 3:
+alias rc='rails console'
+alias rg='rails generate'
+alias rs='rails server'
+
+alias cp='nocorrect cp'         # no spelling correction on cp
+alias mkdir='nocorrect mkdir'   # no spelling correction on mkdir
+alias mv='nocorrect mv'         # no spelling correction on mv
+alias rm='nocorrect rm'         # no spelling correction on rm
+
+alias '..'='cd ..'
+# The -g makes them global aliases, so they're expaned even inside commands
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+# Aliases '-' to 'cd -'
+alias -- -='cd -'
+
+
+# Git 
+
+alias ga='git add'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+# PATH
 
 export PATH=$PATH:/var/lib/gems/1.8/bin
+export PATH=$PATH:~/.bin
 # Shortcuts
 #
 # Ctrl + U => Clean all line
@@ -719,7 +648,17 @@ setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
 
+setopt hash_list_all        # Whenever a command completion is attempted, make sure
+                            # the entire command path is hashed first.
+                            #
+
 WORDCHARS=''
+
+setopt auto_cd              # if a command is issued that can't be executed as a normal command,
+                            # and the command is the name of a directory,
+                            # perform the cd command to that directory
+                            #
+                            #
 
 autoload -Uz compinit
 compinit # -u si il y a des problèmes avec les fichiers qui sont pas les miens
@@ -763,6 +702,16 @@ zstyle ":completion:*:processes" command "ps -au$USER"
 zstyle ":completion:*:*:kill:*:processes" list-colors "=(#b) #([0-9]#)*=0=01;32"
 #  #  * Complete with colors
 zstyle ":completion:*" list-colors ""
+
+# Don't complete uninteresting users.
+zstyle ':completion:*:*:*:users' ignored-patterns adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
+    dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+    hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+    mailman mailnull mldonkey mysql nagios named netdump news \
+    nfsnobody nobody nscd ntp nut nx openvpn operator pcap postfix \
+    postgres privoxy pulse pvm quagga radvd rpc rpcuser rpm shutdown \
+    squid sshd sync uucp vcsa xfs www-data avahi-autoipd
+
 # key-bindings.zsh
 
 bindkey -v

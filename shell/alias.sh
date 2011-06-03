@@ -8,15 +8,17 @@ alias standard_proxy='export HTTP_PROXY=""'
 
 # General alias 
 
-alias l='ls -alh --color=auto'
+alias l='ls -lh'
 alias rtfm='man'
 alias ll='ls -l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias ls='ls -aF'
+alias ls='ls -aF --color=auto'
 alias df='df -hT'
 alias du='du -hc'
 alias ..='cd ..'
+alias rd='rmdir'
+alias md='mkdir'
 
 # Commandes sympas 
 
