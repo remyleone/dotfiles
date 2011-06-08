@@ -137,15 +137,6 @@ alias mkdir='nocorrect mkdir'   # no spelling correction on mkdir
 alias mv='nocorrect mv'         # no spelling correction on mv
 alias rm='nocorrect rm'         # no spelling correction on rm
 
-alias '..'='cd ..'
-# The -g makes them global aliases, so they're expaned even inside commands
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-# Aliases '-' to 'cd -'
-alias -- -='cd -'
-
-
 # Git 
 
 alias ga='git add'
