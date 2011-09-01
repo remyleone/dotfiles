@@ -15,7 +15,7 @@ Host lunix31
 	HostName lunix31.ensiie.fr
 	User remy.leone
 
-Host krakatoa
-        HostName krakatoa.paris-montagne.org
+Host vesuvio
+        HostName vesuvio.paris-montagne.org
         User rleone
 
