@@ -13,3 +13,8 @@ Host lunix121
 Host lunix31
 	HostName lunix31.ensiie.fr
 	User remy.leone
+
+Host vesuvio
+        HostName vesuvio.paris-montagne.org
+        User rleone
+
