@@ -17,4 +17,6 @@ Host lunix31
 Host vesuvio
         HostName vesuvio.paris-montagne.org
         User rleone
-
+Host server
+  HostName sieben.hd.free.fr
+  User sieben
