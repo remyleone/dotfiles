@@ -92,6 +92,7 @@ end
 task :git do
     sh 'cp git/gitconfig ~/.gitconfig'
     sh 'cp git/gitmodules ~/.gitmodules'
+    sh 'cp git/gitignore ~/.gitignore'
 end
 
 task :git_clean do
