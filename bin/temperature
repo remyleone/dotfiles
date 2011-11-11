@@ -1,0 +1,85 @@
+#!/bin/sh
+# (c) Philippe Bayle
+# 2009
+
+cmd_mb="mbmon"
+cmd_hdd="smartctl"
+cmd_cpu="sensors"
+
+if [ "$#" -eq 0 ] || [ "$1" = "-h"  ] || [ "$1" = "--help" ]
+then
+	echo "Usage:"
+	echo ""
+	echo "$0 [-h] | cpu | mb | hdd"
+	echo ""
+	echo "  -h              help"
+	echo ""
+	echo "commands:	"
+	echo "  * cpu           cpu temperature (requires ${cmd_cpu} on Linux)"
+	echo "  * mb            motherboard temperature (requires ${cmd_mb})"
+	echo "  * hdd           hard drives temperature (requires ${cmd_hdd})"
+	echo ""
+	exit
+fi
+
+
+#--------------------
+# argument parsing
+#--------------------
+
+case $1 in
+	cpu)
+		# we identify the OS
+		case `uname -s` in
+			Linux)
+				# we check if the command is here
+				command -vp ${cmd_cpu} >/dev/null
+				[ $? -ne 0 ] && echo "${cmd_cpu} not found" && exit
+				# we get and output the info with the right formatting
+				${cmd_cpu} | awk '/Core/ {print $1, $2, $3}'
+				;;
+			FreeBSD)
+				sysctl dev.cpu | grep temperature
+				;;
+			*)
+				echo "OS non reconnu"
+				exit
+				;;
+		esac
+		;;
+	mb)
+		# we check if the command is here
+		command -vp ${cmd_mb} >/dev/null
+		[ $? -ne 0 ] && echo "${cmd_mb} not found" && exit
+		# we get and output the info with the right formatting
+		${cmd_mb} -A -c1 -r | awk '/TEMP0/ {print "mb","\t", $3}'
+		;;
+	hdd)
+		# we check if the command is here
+		command -vp ${cmd_hdd} >/dev/null
+		[ $? -ne 0 ] && echo "${cmd_hdd} not found" && exit
+		# we identify the OS
+		case `uname -s` in
+			Linux)
+				device="sd"
+				;;
+			FreeBSD)
+				device="ad"
+				;;
+			*)
+				echo "OS non reconnu"
+				exit
+				;;
+		esac
+		# we check every disk one by one
+		for i in `ls /dev/${device}?`
+		do
+			${cmd_hdd} -d ata -A $i | awk -v disk=$i '/Celsius/ {print disk,"\t", $10}'
+		done
+		;;
+	*)
+		echo "invalid argument : $1"
+		;;
+esac
+
+

@@ -1,0 +1,30 @@
+#!/bin/sh
+# (c) Philippe Bayle
+# 2010
+
+# usage :
+# Ce script permet de detecter et reconstruire les ports
+# brisé à cause d'une shared library
+
+# fichier temporaire contenant liste des ports
+tmp=`mktemp -t bsdep-rebuild`
+
+# recherche des binaires brisés
+find /usr/local/bin/ /usr/local/sbin/ /usr/local/libexec/ -type f | \
+xargs -Ifile sh -c '(ldd file 2>/dev/null | grep -q "not found") && echo file' | \
+xargs -n 1 pkg_info -W | awk '{ print $NF }' | sort | uniq > $tmp
+
+
+# affichage des ports brisés et proposition des les réparer
+[ -s $tmp ] || echo "no broken port detected" && exit
+
+echo "List of broken ports (see $tmp) :"
+cat $tmp
+
+echo ""
+
+read -p "Do you want to rebuild those ports? (yes/no) : " confirm
+[ $confirm = "yes" ] && cat $tmp | xargs /usr/local/sbin/portmaster -dB || exit
+
+# netoyage
+rm $tmp

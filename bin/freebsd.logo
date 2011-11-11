@@ -1,0 +1,45 @@
+# FreeBSD Logo
+
+SYSINFO_POSITION right
+
+DESCRIPTION_STRING FreeBSD Logo
+NAME freebsd
+
+BEGIN_LOGO
+[0m
+[33;1;31m              N               [33;1;34m     _____                        ____    ____    ____
+[33;1;31m N8$,=8 DI. . ....~ON ~:+OD   [33;1;34m    |  ___|  _ __    ___    ___  | __ )  / ___|  |  _ \
+[33;1;31m  D8ZI:.........:?O~..:?88N   [33;1;34m    | |_    | '__|  / _ \  / _ \ |  _ \  \___ \  | | | |
+[33;1;31m  $8Z............:,..:ZODI    [33;1;34m    |  _|   | |    |  __/ |  __/ | |_) |  ___) | | |_| |
+[33;1;31m   I.....,,,::::::$~IZO8+     [33;1;34m  | |_|     |_|     \___|  \___| |____/  |____/  |____/
+[33;1;31m  N::,..:~==I$$$Z$I?O88?=I    [33;1;34m  `-------------------------------- the power to[33;1;31m serve[33;1;34m !  [0m
+[33;1;31m  ,,~,.:?$ZZZOOO88888OZO7~    [33;1;37m
+[33;1;31m  ~7=:+7ZOOOOOO8888DDDDDO?N   [33;1;37m
+[33;1;31m  +ZZ$$$OOOOO88888D888DDD?8   [33;1;37m
+[33;1;31m  ~OZZZZOOOO888888888DDD8,D   [33;1;37m
+[33;1;31m  .8OZZZZOOO888O8888DDD8~,    [33;1;37m
+[33;1;31m  8.8OOZZZZOD8888888DDZI,=    [33;1;37m
+[33;1;31m   878OOOZZZZO88888O$$$=+     [33;1;37m
+[33;1;31m    O:8OOOOOOZZZZ$$$$7=+      [33;1;37m
+[33;1;31m      +$8OOOZOZZZ$$$==        [33;1;37m
+[33;1;31m        8?$ZZOZ$I??$          [33;1;37m
+END_LOGO
+
+BEGIN_ASCII_LOGO
+              N               
+ N8$,=8 DI. . ....~ON ~:+OD   
+  D8ZI:.........:?O~..:?88N   
+  $8Z............:,..:ZODI    
+   I.....,,,::::::$~IZO8+     
+  N::,..:~==I$$$Z$I?O88?=I    
+  ,,~,.:?$ZZZOOO88888OZO7~    
+  ~7=:+7ZOOOOOO8888DDDDDO?N   
+  +ZZ$$$OOOOO88888D888DDD?8   
+  ~OZZZZOOOO888888888DDD8,D   
+  .8OZZZZOOO888O8888DDD8~,    
+  8.8OOZZZZOD8888888DDZI,=    
+   878OOOZZZZO88888O$$$=+     
+    O:8OOOOOOZZZZ$$$$7=+      
+      +$8OOOZOZZZ$$$==        
+        8?$ZZOZ$I??$          
+END_ASCII_LOGO

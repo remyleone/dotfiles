@@ -1,0 +1,90 @@
+#!/bin/sh
+# (c) Philippe Bayle
+# 2008
+
+pub_path="/home/pub"
+old_age="30d"
+remove_files=0
+do_action="time"
+
+if [ "$#" -eq 0 ] || [ "$1" = "-h"  ] || [ "$1" = "--help" ]
+then
+	echo "Usage:"
+	echo ""
+	echo "$0 [-h] | [-p path ]  [ [-w] [-t time ] time ]  | [ size ]"
+	echo ""
+	echo "-h:               help"
+	echo "-p path           path to search in (default ${pub_path})"
+	echo "-d                remove selected files"
+	echo "-t time           max age of files before becoming old (default ${old_age})"
+	echo ""
+	echo "commands:	"
+	echo "  * time    list too old files"
+	echo "  * size    list directories by sizes"
+	echo ""
+	exit
+fi
+
+#--------------------
+# argument parsing
+#--------------------
+while [ "$1" != "" ]
+do
+	case $1 in
+		-p)
+		export pub_path="$2"
+		shift
+		;;
+		-t)
+		export old_age="$2"
+		shift
+		;;
+		-d)
+		export remove_files=1
+		shift
+		;;
+		time)
+		export do_action="time"
+		;;
+		size)
+		export do_action="size"
+		;;
+		*)
+		echo "invalid argument : $1"
+		;;
+	esac
+	shift
+done
+
+
+#------------------
+# actions
+#------------------
+
+echo -n "[32;1m"
+echo "====================================================="
+echo "action ${do_action}"
+echo "====================================================="
+echo -n "[0m"
+
+
+case $do_action in
+	time)
+	if [ $remove_files -eq 0 ] ; then
+		export action="stat -f %SB%t%N"
+	else
+		read -p "Are you sure you want to do this? (yes/no) : " confirm
+		[ $confirm = "yes" ] && export action="rm -rf" || exit
+	fi
+	find ${pub_path}/* -Btime +${old_age} -maxdepth 0 -exec ${action} {} \;
+	;;
+	size)
+	du -sh ${pub_path}/*
+	;;
+	*)
+	echo "erreur interne"
+	;;
+esac
+
+
+

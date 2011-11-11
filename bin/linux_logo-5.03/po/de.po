@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2001-03-16 15:12-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplulars=2; plural=n != 1;\n"
+
+#: ../linux_logo.c:34
+msgid "Zero"
+msgstr "Nul"
+
+#: ../linux_logo.c:34
+msgid "One"
+msgstr "Ein"
+
+#: ../linux_logo.c:34
+msgid "Two"
+msgstr "Zwei"
+
+#: ../linux_logo.c:34
+msgid "Three"
+msgstr "Drei"
+
+#: ../linux_logo.c:35
+msgid "Four"
+msgstr "Vier"
+
+#: ../linux_logo.c:35
+msgid "Five"
+msgstr "Fuenf"
+
+#: ../linux_logo.c:35
+msgid "Six"
+msgstr "Sechs"
+
+#: ../linux_logo.c:35
+msgid "Seven"
+msgstr "Sieben"
+
+#: ../linux_logo.c:36
+msgid "Eight"
+msgstr "Acht"
+
+#: ../linux_logo.c:36
+msgid "Nine"
+msgstr "Neun"
+
+#: ../linux_logo.c:36
+msgid "Many"
+msgstr "Viele"
+
+#. This is the default format of the output file.  See the README for more *\
+#. \* information on how to configure this option.
+#: ../defaults.h:7
+msgid ""
+"#O Version #V, Compiled #C\n"
+"#N #M #X #T #P, #R RAM, #B Bogomips Total\n"
+"#H\n"
+msgstr ""
+"#O Version #V, Compiled #C\n"
+"#N #M #X #T #P, #R RAM, #B Bogomips Total\n"
+"#H\n"
+
+
+#: ../defaults.h:8
+msgid ""
+"#O Version #V\n"
+"Compiled #C\n"
+"#N #M #X #T #P, #R RAM\n"
+"#B Bogomips Total\n"
+"#H\n"
+msgstr ""
+"#O Version #V\n"
+"Compiled #C\n"
+"#N #M #X #T #P, #R RAM\n"
+"#B Bogomips Total\n"
+"#H\n"
+
+#: ../defaults.h:9
+msgid ""
+"Processor"
+msgstr ""
+"Prozessor"
+
+#: ../defaults.h:10
+msgid ""
+"Processors"
+msgstr ""
+"Prozessoren"

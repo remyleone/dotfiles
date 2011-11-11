@@ -1,0 +1,92 @@
+#!/bin/sh
+# (c) Philippe Bayle
+# 2008
+
+#password=``
+password=`echo $RANDOM | sha1 | cut  -c1-8`
+time_expiration="-1"		# no expiration by default
+time_now=$((`date +%s`/86400))	# number of days since EPOCH
+tmp=`mktemp -t ldap_invite`
+
+if [ "$#" -eq 0 ] || [ "$1" = "-h"  ] || [ "$1" = "--help" ]
+then
+	echo "Usage:"
+	echo ""
+	echo "$0 [-h] | [-t duration] [-s password] uid"
+	echo ""
+	echo "-h                this help"
+	echo "-t duration       period of validity for this account in days (no expiration if unspecified)"
+	echo "-s                password for the account (default automatically generated)"
+	echo "uid               name of the account"
+	echo ""
+	echo ""
+	exit
+fi
+
+#--------------------
+# argument parsing
+#--------------------
+while [ "$1" != "" ]
+do
+	case $1 in
+		-t)
+		time_expiration=$(($time_now + $2))
+		shift
+		;;
+		-s)
+		password="$2"
+		shift
+		;;
+		*)
+		uid=$1
+		;;
+	esac
+	shift
+done
+
+
+#------------------
+# actions
+#------------------
+
+echo -n "[32;1m"
+echo "====================================================="
+echo "Création du compte : ${uid}"
+echo "Date d'expiration  : ${time_expiration}"
+echo "Password du compte : ${password}"
+echo "====================================================="
+echo -n "[0m"
+
+# we crypt the password
+password_chiffre=`slappasswd -h '{SSHA}' -s ${password}`
+
+# then we write the new account down
+echo "
+########################
+# utilisateur invité
+# l'attribut shadowExpire définit la date, en nombre de jours depuis le 1er janvier 1970, où le compte expire
+#
+dn: uid=${uid},ou=people,dc=erebor,dc=fr
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+uid: ${uid}
+cn: ${uid}
+sn: ${uid}
+userpassword: ${password_chiffre}
+shadowExpire: ${time_expiration}
+" > $tmp
+
+# then we commit the new entry into the ldap
+echo ""
+echo "Ldap admin password..."
+ldapmodify -a -f $tmp -x -D "cn=admin,dc=erebor,dc=fr" -W
+
+# and we even have the luxury to test the return
+if [ $? -eq 0 ] ; then
+	echo "La création du compte de l'invité ${uid} est un succès"
+	exit 0
+else
+	echo "Une erreur s'est produite durant la création du compte invité"
+	exit 1
+fi
+

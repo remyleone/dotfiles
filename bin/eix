@@ -1,0 +1,34 @@
+#!/bin/sh
+
+#
+# wrapper de recherche de packages
+# (c) KissCool 2008
+#
+
+# il faut récupérer la variable $DISTRIB_ID
+. /usr/local/scripts/kc.profile
+
+# eix()
+# définition de l'utilitaire de recherche de package
+
+case `echo $DISTRIB_ID | tr "[:upper:]" "[:lower:]"` in
+	debian|ubuntu)
+		aptitude search $*
+		;;
+	mandriva)
+		urpmq -y $*
+		;;
+	fedora)
+		yum search $*
+		;;
+	gentoo)
+		/usr/bin/eix $*
+		;;
+	freebsd)
+		/usr/ports/Tools/scripts/portsearch $*
+		;;
+	*)
+		echo "eix non defini"
+		;;
+esac
+

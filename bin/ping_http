@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+# (c) Philippe Bayle
+# 2007
+
+count_ping=10
+url=""
+proxy=""
+proxy_user=""
+proxy_args=""
+tmp_data=`mktemp -t ping`
+tmp_stat=`mktemp -t ping`
+sleep_time=0
+
+if [ "$#" -eq 0 ] || [ "$1" = "-h"  ] || [ "$1" = "--help" ]
+then
+	echo "Usage:"
+	echo ""
+	echo "$0 [-h] | [-c count] [-i interval] [-x proxy [-u user:password] ] url"
+	echo ""
+	echo "-h:               Help"
+	echo "-c count:         Ping count (default 10)"
+	echo "-i interval:      Interval between pings in seconds (default 0)"
+	echo "-x proxy:         Proxy to use (default none)"
+	echo "-u user:password: Proxy user and password"
+	echo "url:              Adress to ping"
+	echo ""
+	exit
+fi
+
+#--------------------
+# argument parsing
+#--------------------
+while [ "$1" != "" ]
+do
+	case $1 in
+		-c)
+		export count_ping=$2
+		shift
+		;;
+		-i)
+		export sleep_time=$2
+		shift
+		;;
+		-x)
+		export proxy=$2
+		shift
+		;;
+		-u)
+		export proxy_user=$2
+		shift
+		;;
+		*)
+		export url=$1
+		;;
+	esac
+	shift
+done
+
+#------------------
+# proxy managing
+#------------------
+if [ "$proxy" != "" ]
+then
+	export proxy_args="-x $proxy -U $proxy_user"
+fi
+
+# we create the temp file
+touch $tmp_stat
+
+#---------------
+# curl loop
+#---------------
+i=1
+while [ $i -lt $count_ping ]
+do
+	curl $proxy_args -o $tmp_data -w "%{time_total}\t%{time_namelookup}\t%{time_connect}\t%{time_pretransfer}\t%{time_redirect}\t%{time_starttransfer}\t%{speed_download}\n" $url 2>/dev/null >> $tmp_stat
+	sleep $sleep_time
+	i=$(($i+1))
+done
+
+# we define our variables
+var_stat=("time_total" "time_namelookup" "time_connect" "time_pretransfer" "time_redirect" "time_starttransfer" "speed_download")
+var_num=${#var_stat[*]}
+
+
+#-------------------------------------------
+# then we do some fancy stats with it
+#-------------------------------------------
+
+i=1
+while [ $i -lt $var_num ]
+do
+	echo ""
+	echo "${var_stat[$i-1]} :"
+	cat $tmp_stat | awk '
+	BEGIN {sum = 0.0; sum_power = 0.0;}
+	{sum += $'$i'; sum_power += $'$i' * $'$i'}
+	END {mean = sum / NR; variance = (sum_power / NR) - mean * mean; 
+	print "mean = ", mean; print "variance = ", variance;}'
+	i=$(($i+1))
+done
