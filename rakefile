@@ -1,17 +1,8 @@
 # Rakefile de construction de mes fichiers de configurations
 
-task :default => [:vim_install, :ssh, :music, :avatar, 
-    :bash_install, :zsh_install, :screen, :git,
+task :default => [ :ssh, :music, :avatar, 
+    :bash_install, :screen, :git,
     :bin, :tmux, :gemrc ]
-
-task :vim_install do
-    sh 'cp vim/vimrc ~/.vimrc'
-    sh 'cp -r vim ~/.vim'
-end
-
-task :vim_clean do
-    sh 'rm -fr ~/.vim/ ~/.vimrc'
-end
 
 task :ssh do
     sh 'mkdir -p ~/.ssh/'
@@ -39,54 +30,12 @@ task :avatar_clean do
     sh 'rm ~/.face'
 end
 
-task :shell_build do
-    sh 'rm -f shell/shell.sh'
-    sh 'cat shell/export.sh >> shell/shell.sh'
-    sh 'cat shell/alias.sh >> shell/shell.sh'
-    sh 'cat shell/path.sh >> shell/shell.sh'
-end
-
 task :irc do
     sh 'cp -r irc/irssi/ ~/.irssi'
 end
 
 task :irc_clean do
     sh 'rm -fr ~/.irssi'
-end
-
-task :bash_build => :shell_build do
-    sh 'rm -f shell/bash/bashrc'
-    sh 'cat shell/shell.sh >> shell/bash/bashrc'
-    sh 'cat shell/bash/bashrc.bash >> shell/bash/bashrc'
-end
-
-task :bash_install => :bash_build do
-    sh 'cp shell/bash/bashrc ~/.bashrc'
-end
-
-task :bash_clean do
-    sh 'rm ~/.bashrc'
-end
-
-task :zsh_build => :shell_build do
-    sh 'rm -f shell/zsh/zshrc'
-    sh 'cat shell/shell.sh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/zshrc.zsh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/appearance.zsh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/prompt.zsh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/history.zsh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/git.zsh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/completion.zsh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/key-bindings.zsh >> shell/zsh/zshrc'
-    sh 'cat shell/zsh/misc.zsh >> shell/zsh/zshrc'
-end
-
-task :zsh_install => :zsh_build do
-    sh 'cp shell/zsh/zshrc ~/.zshrc'
-end
-
-task :zsh_clean do
-    sh 'rm -fr ~/.zsh .zshrc'
 end
 
 task :git do
