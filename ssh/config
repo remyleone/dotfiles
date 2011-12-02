@@ -18,11 +18,15 @@ Host vesuvio
 HostName vesuvio.paris-montagne.org
 User rleone
 
+Host upmc
+HostName ssh.ufr-info-p6.jussieu.fr
+User 2705995
+
 Host server
 HostName sieben.hd.free.fr
 User sieben
 
-Host deborah
-HostName 172.17.17.31
-Port 1022
+Host ftp-x0r
+Port 1024
+HostName 172.17.17.32
 User sieben
