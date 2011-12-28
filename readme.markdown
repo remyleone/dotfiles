@@ -1,3 +1,5 @@
-Powererd by Rémy 'Sieben' Leone
+Dotfiles
+===========
 
-Ce dossier contient tous mes dotfiles et mes autres fichiers de configuration
+
+:set spell spl=fr <- Correction français
