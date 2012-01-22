@@ -1,7 +1,7 @@
 BOFH Excuses
 ============
 
-  telnet towel.blinkenlights.nl 666
+  `telnet towel.blinkenlights.nl 666`
 
 Shortcuts
 ==============
