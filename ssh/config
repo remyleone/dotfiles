@@ -30,3 +30,6 @@ Host ftp-x0r
 Port 1024
 HostName 172.17.17.32
 User sieben
+
+Host ftp-gentilboulet
+HostName 172.17.17.68
