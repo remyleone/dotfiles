@@ -33,3 +33,7 @@ User sieben
 
 Host ftp-gentilboulet
 HostName 172.17.17.68
+
+Host zaratan
+HostName zaratan.fr
+User sieben
