@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 function infos() 
 {
@@ -9,4 +9,3 @@ function infos()
     echo -e "\n${REDP}Machine stats :$NC " ; uptime
     echo -e "\n${REDP}Memory stats :$NC " ; free
 }
-
