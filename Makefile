@@ -12,8 +12,7 @@ tmux_config=~/.tmux.conf
 bin=~/.bin
 screen_config=~/.screen.rc
 
-all:
-	screen bin avatar irssi git screen tmux vim zsh
+all: screen bin avatar irssi git screen tmux vim zsh
 
 clean:
 	rm -fr $(avatar) $(ssh_config) $(irssi_config)
