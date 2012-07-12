@@ -9,8 +9,6 @@ defscrollback 10000               # change default scrollback value for new wind
 nonblock on                       # don't block everything, waiting for an unresponsive window
 vbell off                         # no bell
 
-# defscrollback 1024
-
 # Terminal settings
 
 termcapinfo vt100 dl=5\E[M
@@ -22,14 +20,7 @@ caption splitonly " %n %t "
 
 hardstatus alwayslastline "%{b kw}%{b cw} %H %{-} %{= kw}%-Lw%{+b cw}%L>%n%f %t%{-}%+Lw%{= kw}%L> | %>%{+b}%h%{-b}%>%= | %0c"
 
-# termcapinfo xterm*|linux*|rxvt*|Eterm* OP
-# termcapinfo xterm*|linux*|rxvt*|Eterm* XT
-# termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
-# termcapinfo xterm*|linux*|rxvt*|Eterm* ti@:te@
-
 termcapinfo xterm-color|xterm-16color|xterm-88color|xterm-256color|rxvt* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
 sorendition =s KW 
-# msgwait 3
-# bell "^GBell in window %"
