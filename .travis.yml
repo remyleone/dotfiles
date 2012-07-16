@@ -1,6 +1,7 @@
 install:
   - sudo apt-get install zsh screen tmux
   - sudo chsh --shell $(which zsh)
+  - zsh &
 
 script:
   - make
