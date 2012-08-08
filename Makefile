@@ -34,7 +34,7 @@ irssi:
 	ln -s -r irc/irssi/ $(irssi_config)
 
 git:
-	ln -s git/gitconfig $(git_config)
+	ln -s gitconfig $(git_config)
 
 screen:
 	ln -s screenrc $(screen_config)
