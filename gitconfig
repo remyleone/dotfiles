@@ -16,7 +16,7 @@ excludesfile = ~/.gitignore
 [alias]
 co = checkout
 ci = commit
-st = status
+st = status -sb
 br = branch
 hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 type = cat-file -t
