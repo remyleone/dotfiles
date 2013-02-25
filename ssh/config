@@ -37,3 +37,23 @@ HostName 172.17.17.68
 Host zaratan
 HostName zaratan.fr
 User sieben
+
+Host grenoble
+HostName grenoble.senslab.info
+User leone
+
+Host strasbourg
+HostName strasbourg.senslab.info
+User leone
+
+Host lille
+HostName lille.senslab.info
+User leone
+
+Host euratech
+HostName euratech.senslab.info
+User leone
+
+Host rennes
+HostName rennes.senslab.info
+User leone
