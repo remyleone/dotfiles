@@ -34,10 +34,6 @@ Host strasbourg
 HostName strasbourg.senslab.info
 User leone
 
-Host lille
-HostName lille.senslab.info
-User leone
-
 Host euratech
 HostName euratech.senslab.info
 User leone
