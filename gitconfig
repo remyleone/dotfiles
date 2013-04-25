@@ -34,3 +34,6 @@ pager = true
 
 [pager]
 color = true
+
+[push]
+default = matching
