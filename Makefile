@@ -12,8 +12,6 @@ tmux_config=~/.tmux.conf
 bin=~/.bin
 screen_config=~/.screen.rc
 
-all: screen bin avatar irssi git screen tmux vim
-
 clean:
 	rm -fr $(avatar) $(ssh_config) $(irssi_config)
 	rm -fr $(git_config) $(screen_config)
@@ -21,29 +19,26 @@ clean:
 	rm -fr $(vim)
 	rm -fr $(bin)
 
-screen:
-	ln -s screenrc $(screen_config)
+avatar:
+	ln -s avatar/face.jpg $(avatar)
 
 bin:
 	ln -s bin $(bin)
 
-avatar:
-	ln -s avatar/face.jpg $(avatar)
+git:
+	cp -f gitconfig $(git_config)
 
 irssi:
-	ln -s -r irc/irssi/ $(irssi_config)
-
-git:
-	ln -s gitconfig $(git_config)
+	cp -fr irc/irssi/ $(irssi_config)
 
 screen:
-	ln -s screenrc $(screen_config)
-
-zsh:
-	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-
-vim:
-	curl -Lo- https://bit.ly/janus-bootstrap | bash
+	cp -f screenrc $(screen_config)
 
 tmux:
 	ln -s tmux.conf $(tmux_config)
+
+vim:
+	curl http://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+
+zsh:
+	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh

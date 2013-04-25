@@ -6,21 +6,9 @@ Host perso
 HostName perso.iiens.net
 User leone2009
 
-Host lunix121
-HostName lunix121.ensiie.fr
-User remy.leone
-
-Host lunix31
-HostName lunix31.ensiie.fr
-User remy.leone
-
 Host vesuvio
 HostName vesuvio.paris-montagne.org
 User rleone
-
-Host upmc
-HostName ssh.ufr-info-p6.jussieu.fr
-User 2705995
 
 Host server
 HostName sieben.hd.free.fr
@@ -44,10 +32,6 @@ User leone
 
 Host strasbourg
 HostName strasbourg.senslab.info
-User leone
-
-Host lille
-HostName lille.senslab.info
 User leone
 
 Host euratech
