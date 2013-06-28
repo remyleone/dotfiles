@@ -1,39 +1,41 @@
 [user]
-name = Rémy Léone
-email = remy.leone@gmail.com
+  name = Rémy Léone
+  email = remy.leone@gmail.com
 
 [github]
-user = sieben
+  user = sieben
 
 [status]
-color = auto
+  color = auto
 
 [core]
-editor = vim
-pager = less
-excludesfile = ~/.gitignore
+  editor = vim
+  pager = less
+  excludesfile = ~/.gitignore
 
 [alias]
-co = checkout
-ci = commit
-st = status -sb
-br = branch
-hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-type = cat-file -t
-dump = cat-file -p
-l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  co = checkout
+  ci = commit
+  di = diff
+  st = status -sb
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  fixup = commit --amend -C HEAD
+  l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [color]
-branch = auto
-status = auto
-diff = auto
-ui = auto
-diff = auto
-interactive = auto
-pager = true
+  branch = auto
+  status = auto
+  diff = auto
+  ui = auto
+  diff = auto
+  interactive = auto
+  pager = true
 
 [pager]
-color = true
+  color = true
 
 [push]
-default = matching
+  default = matching
