@@ -1,6 +1,14 @@
+ControlMaster auto
+ControlPath /tmp/ssh_mux_%h_%p_%r
+ControlPersist 4h
+
 Host *
 KeepAlive yes
 Compression no
+
+Host home
+HostName home.sieben.fr
+User sieben
 
 Host perso
 HostName perso.iiens.net
@@ -14,30 +22,72 @@ Host server
 HostName sieben.hd.free.fr
 User sieben
 
-Host ftp-x0r
-Port 1024
-HostName 172.17.17.32
-User sieben
+Host lame11
+HostName lame11.enst.fr
+ProxyCommand ssh enst -W %h:%p
+User leone
 
-Host ftp-gentilboulet
-HostName 172.17.17.68
+Host lame12
+HostName lame12.enst.fr
+ProxyCommand ssh enst -W %h:%p
+User leone
+
+Host lame13
+HostName lame13.enst.fr
+ProxyCommand ssh enst -W %h:%p
+User leone
+
+Host lame14
+HostName lame14.enst.fr
+ProxyCommand ssh enst -W %h:%p
+User leone
+
+Host lame15
+HostName lame15.enst.fr
+ProxyCommand ssh enst -W %h:%p
+User leone
+
+Host lame16
+HostName lame16.enst.fr
+ProxyCommand ssh enst -W %h:%p
+User leone
+
+Host enst
+HostName ssh.enst.fr
+User leone
+
+Host x0r
+HostName freyja.x0r.fr
+User sieben
 
 Host zaratan
 HostName zaratan.fr
 User sieben
 
-Host grenoble
-HostName grenoble.senslab.info
-User leone
-
 Host strasbourg
-HostName strasbourg.senslab.info
+HostName strasbourg.iot-lab.info
 User leone
 
 Host euratech
-HostName euratech.senslab.info
+HostName euratech.iot-lab.info
 User leone
 
 Host rennes
-HostName rennes.senslab.info
+HostName rennes.iot-lab.info
 User leone
+
+Host grenoble
+HostName grenoble.iot-lab.info
+User leone
+
+Host github
+HostName github.com
+User git
+
+Host bitbucket
+HostName bitbucket.org
+User git
+
+Host hitomi
+HostName 192.168.0.13
+User xbmc
