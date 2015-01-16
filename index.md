@@ -1,7 +1,7 @@
 ---
 ---
 
-* [ssh](/ssh/config)
-* [tmux](/tmux.conf)
-* [screen](/screenrc)
-* [gitconfig](/gitconfig)
+* [ssh](ssh/config)
+* [tmux](tmux.conf)
+* [screen](screenrc)
+* [gitconfig](gitconfig)
