@@ -92,16 +92,6 @@ alias memory='sudo lshw -short -C memory'
 alias htmlencode="perl -MHTML::Entities -pe 'encode_entities(\$_)'"
 alias htmldecode="perl -MHTML::Entities -pe 'decode_entities(\$_)'"
 
-# rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
-
 # Shortcut
 
 alias bat='acpitool -b'
@@ -109,50 +99,7 @@ alias bat='acpitool -b'
 # Folding in vim
 # zo : Opening a fold
 # zO
-
-alias gcc='gcc -Wall'
-alias vi='vim'
-alias apt='apt-get install'
-
-# chmod
-alias rw-='chmod 600'
-alias rwx='chmod 700'
-alias r--='chmod 644'
-alias r-x='chmod 755'
-
-
-# For Rails:
-alias sc='./script/console'
-alias sg='./script/generate'
-alias ss='./script/server'
-alias sd='./script/destroy'
-
-# For Rails 3:
-alias rc='rails console'
-alias rg='rails generate'
-alias rs='rails server'
-
 alias cp='nocorrect cp'         # no spelling correction on cp
 alias mkdir='nocorrect mkdir'   # no spelling correction on mkdir
 alias mv='nocorrect mv'         # no spelling correction on mv
 alias rm='nocorrect rm'         # no spelling correction on rm
-
-# Git 
-
-alias ga='git add'
-alias gp='git push'
-alias gl='git log'
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-# PATH
-
-export PATH=$PATH:/var/lib/gems/1.8/bin
-export PATH=$PATH:~/.bin
